@@ -1,0 +1,26 @@
+{
+  "name": "computercontrol",
+  "version": "1.0.0",
+  "description": "A way to control simple actions on a computer/server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canichols2/ComputerControl.git"
+  },
+  "author": "Cody Nichols",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/canichols2/ComputerControl/issues"
+  },
+  "homepage": "https://github.com/canichols2/ComputerControl#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "fs-extra": "^7.0.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "socket.io": "^2.1.1"
+  }
+}
