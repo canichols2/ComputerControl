@@ -1,26 +1,39 @@
-const PORT = 8888
+
+const PORT = process.env.PORT || 8888
 var  express = require("./singleton").express,
      app = require("./singleton").app,
      http = require("./singleton").http,
      server = require("./singleton").server,
-     io = require("./singleton").io,
-   //   request = require("./singleton").request,
-   //   cheerio = require("./singleton").cheerio,
-     fs = require("./singleton").fs
-var serverActions = require('./computerActions')
+     io = require("./singleton").io
+     
+var computerActions = require('./computerActions')
 var M = require('./model')
 
-// app.use('/css/ETC.js', express.static('node_modules/'))
+var serverSettings = [
+   {key:"serversDir",value:"C:/opt/minecraft/"},
+]
 
 io.listen(server).on('connection',(socket)=>{
-   socket.on('serverAction',(data)=>{
-      console.log("called serverAction:",data)
-      serverActions.run(data,callback)
+   console.log("Web Connected")
+   socket.on('serverAction',(data,callback)=>{
+      console.log("Socket Call: serverAction",data)
+      computerActions.run(data,callback)
          .then(callback)
          .catch((err)=>{
             socket.emit('err',err)
          })
-   })
+   })   
+   socket.on('SettingsChange',(Data)=>{
+      switch (Data.action) {
+         case "start":
+      
+         default:
+            socket.emit("message", `The action: ${Data.action} is not a valid action.`)
+            break;
+      }
+})
+   socket.on('AdminChange',()=>{})
+   socket.on('blank',()=>{})
 })
 app.use(express.static('client'))
 //Use materialize css files from node_modules directory
