@@ -21,6 +21,8 @@
     "express": "^4.16.3",
     "fs-extra": "^7.0.0",
     "materialize-css": "^1.0.0-rc.2",
+    "node-powershell": "^3.3.1",
+    "node-windows": "^0.1.14",
     "socket.io": "^2.1.1"
   }
 }

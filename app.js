@@ -34,6 +34,7 @@ io.listen(server).on('connection',(socket)=>{
 })
    socket.on('AdminChange',()=>{})
    socket.on('blank',()=>{})
+   socket.emit("Connected From Server")
 })
 app.use(express.static('client'))
 //Use materialize css files from node_modules directory
