@@ -28,14 +28,14 @@ function handleVolumeOptions(options) {
 			switch (options.action) {
 				case "Get Audio Devices":
             console.log("adding \"Get-AudioDevice -List\" command")
-					ps.addCommand("Get-AudioDevice -List")
+					ps.addCommand("Get-AudioDevice -List | ConvertTo-Json")
                console.log("added \"Get-AudioDevice -List\" command")
 					break;
 				case "Get Current Volume":
-					ps.addCommand("Get-AudioDevice -PlaybackVolume")
+					ps.addCommand("Get-AudioDevice -PlaybackVolume  | ConvertTo-Json")
 					break;
 				case "Set Volume":
-					ps.addCommand(`Set-AudioDevice -PlaybackVolume ${options.value}`)
+					ps.addCommand(`Set-AudioDevice -PlaybackVolume ${options.value}  | ConvertTo-Json`)
 					break;
 				case "Set Audio Device":
 					let option;
@@ -45,13 +45,13 @@ function handleVolumeOptions(options) {
 					break;
 
 				default:
-					ps.addCommand('dir')
+					ps.addCommand('dir  | ConvertTo-Json')
 					break;
 			}
       console.log("about to invoke the commands")
 		ps.invoke().then(output => {
          console.log(output)
-			resolve(output)
+			resolve(JSON.parse(output))
 		}).catch(err => {
 			reject(err)
 		})

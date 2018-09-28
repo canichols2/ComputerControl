@@ -28,12 +28,23 @@ function getAudioDevices(){
    },
    (data)=>{
       console.log(data)
+      soundDevices = data
       var listDiv = document.getElementById("audioDevices")
       listDiv.innerHTML = data
    })
 }
 
 
+
+function newElem(parent, type, classList) {
+   var elem = document.createElement(type)
+   if (classList) {
+       for (i in classList)
+           elem.classList.add(classList[i])
+   }
+   parent.appendChild(elem);
+   return elem;
+}
 
 
 // document.addEventListener('DOMContentLoaded', function() {
