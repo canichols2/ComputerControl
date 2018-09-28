@@ -18,3 +18,16 @@ main{
    /* height:120vh ; */
    /* -webkit-overflow-scrolling: touch; */
 }
+
+.status.active{
+   color: green;
+}
+.status.inactive{
+   color: red;
+}
+/* .flexRight{
+   align-self: flex-end;
+   position: absolute;
+   right: 0;
+   margin-right: 50px;
+} */

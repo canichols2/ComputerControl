@@ -10,11 +10,23 @@
        <meta name="apple-mobile-web-app-capable" content="yes">
        <meta name="apple-mobile-web-app-status-bar-style" content="pink">
 
-
-
        <!-- END APPLE SH*T -->
+
+
       <meta charset="UTF-8">
-      <title>Project Blocky</title>
+
+      <!-- Android Standalone App Settings -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="application-name" content="Computer Control">
+      <meta name="theme-color" content="#4285f4">
+      <link rel="manifest" href="/js/manifest.json">
+      <!-- END Android standalone -->
+
+      <meta name="description" content="Allows one to manage certain aspects of the app.">
+
+
+      <title>Computer Control</title>
       <link rel="stylesheet" type="text/css" href="/materialize/css/materialize.min.css">
       
       <link rel="stylesheet" type="text/css" href="/styles/main.css">
@@ -34,7 +46,7 @@
     <body>
       <nav>
          <div class="nav-wrapper">
-            <a href="#!">Logo</a>
+            <div href="#!" class="brand-logo"><span>Computer&nbsp;Control</span> </div>
             <ul class="right hide-on-sm">
                <!-- <li><a href="#!">Information</a></li> -->
                <!-- <li><a href="#!">Server Actions</a></li> -->
@@ -47,16 +59,17 @@
             <div class="row card">
                <div class="card-content">
                   <div class="card-title">Computer Actions</div>
-                  <button class="waves-effect row waves-light btn-large" onclick="sleepComputer()">Sleep...
+                  <button class="waves-effect row waves-light btn-large" onclick="confirmSleep()">Sleep...
                      <i class="material-icons right">hotel</i>
                   </button>
                </div>
             </div>
             <div class="row card">
                <div class="card-content">
-                  <div class="card-title">Audio Devices</div>
-                  <button class="waves-effect row waves-light btn-large" onclick="getAudioDevices()">refresh</button>
-                  <div id="audioDevices">
+                  <div class="card-title">Audio Devices
+                     <button class="waves-effect row waves-light right btn-small" onclick="getAudioDevices()"><i class="material-icons ">sync</i></button>
+                  </div>
+                     <div id="audioDevices">
 
                   </div>
                </div>

@@ -1,0 +1,13 @@
+{
+   "short_name": "Computer Control",
+   "name": "Computer Control",
+   "icons": [
+     {
+       "src": "/assets/icon.png",
+       "sizes": "192x192",
+       "type": "image/png"
+     }
+   ],
+   "start_url": "/index.html",
+   "display": "standalone"
+ }

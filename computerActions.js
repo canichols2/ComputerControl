@@ -41,7 +41,7 @@ function handleVolumeOptions(options) {
 					let option;
 					if(isNaN(options.value)) option = "ID"; else option = "Index";
 					
-					ps.addCommand(`Set-AudioDevice -${option} ${options.value}`)
+					ps.addCommand(`Set-AudioDevice -${option} ${options.value}` + " | ConvertTo-Json")
 					break;
 
 				default:
